@@ -1,0 +1,17 @@
+[
+	{
+		"name": "test",
+		"id": "6e997ad6-d948-4c22-907b-667e3238a5ec",
+		"watched": ["Taxi Driver", "Gangs of New York"]
+	},
+	{
+		"name": "test",
+		"id": "b5e737df-1094-4834-9c20-beaa9cd86b50",
+		"watched": ["Taxi Driver", "Gangs of New York"]
+	},
+	{
+		"name": "marno",
+		"id": "0f2d748b-27b1-4fd9-881f-ce8b380c22d7",
+		"watched": ["Taxi Driver", "Gangs of New York"]
+	}
+]
