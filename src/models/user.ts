@@ -16,6 +16,8 @@ function createUser(data: any) {
 
 abstract class UserModel {
 	static async createUser(userData: any): Promise<any> {
+		// Chequear que no exista ya el usuario.
+
 		const database = usersDB as User[];
 		const newUser = createUser(userData);
 
@@ -26,7 +28,25 @@ abstract class UserModel {
 		return { status: true, user: newUser.id };
 	}
 
-	static async addMovie(movie: string) {}
+	static async addMovie(dataObj: any) {
+		const { userID, watched } = dataObj;
+
+		const indexOfMovie = usersDB.findIndex((movie) => movie.id == userID);
+
+		if (indexOfMovie === -1) return false;
+
+		const userFound = usersDB[indexOfMovie];
+
+		userFound.watched.push(...watched);
+
+		usersDB.splice(indexOfMovie, 1, userFound);
+
+		console.log(usersDB);
+
+		writeFile(USERS_DB_PATH, usersDB);
+
+		return true;
+	}
 }
 
 export { UserModel };
